@@ -23,6 +23,7 @@ Later we'll show you how to use Actions to control your site logic, how localiza
 
 = JPublish Basics =
 
+_todo_
 
 = Disclaimer =
 {{{
@@ -38,7 +39,6 @@ Later we'll show you how to use Actions to control your site logic, how localiza
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
-
 
 
 
