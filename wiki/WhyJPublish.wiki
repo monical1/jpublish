@@ -53,10 +53,10 @@ JPublish also supports static elements such as images and other media files. JPu
 
 The JPublish framework defines the Action interface as a way of invoking custom actions in response to form data. There are two ways to provide actions:
 
-  # Implement the Action interface and register your action with the config.xml file.
+  # Implement the Action interface and register your action with the page configuration file file.
   # Implement your action in a scripting language supported by the Bean Scripting Framework (such as BeanShell) and include the script file in the actions directory.
 
-Actions can be invoked at several different locations. JPublish currently supports 5 different locations for invoking actions:
+Actions can be invoked at several different locations. JPublish currently supports 6 different locations for invoking actions:
 
   * Startup - Actions registered in the configuration file as startup-actions will be executed when the Servlet is first loaded (which should be when the servlet engine starts.) These actions will be executed in a minimum context from where the developer can get access to few JPublish core objects such as: 'site', 'syslog', etc. The syntax is:
 {{{
@@ -76,7 +76,7 @@ Actions can be invoked at several different locations. JPublish currently suppor
           <path-action path="path" name="script|name"/>
 }}}
   * Page - Actions can be bound to a specific page. The definition for these types of actions occurs within the page's definition document.
-
+  * Post and Pre evaluation - _todo_
 
 In order for script actions to function the scripting language's JAR files must be included in the WEB-INF/lib directory in your web application.
 
@@ -103,4 +103,3 @@ JPublish exposes an object called *syslog* in the Page context and in the script
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
-
