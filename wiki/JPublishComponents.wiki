@@ -1,0 +1,6 @@
+#summary Page dedicated to the JPublish Components.
+#labels Featured,components
+
+= Components =
+
+_todo_
