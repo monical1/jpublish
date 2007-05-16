@@ -1,0 +1,45 @@
+#summary why JPublish.
+
+= Introduction =
+
+JPublish is a powerful web publishing system designed to ensure a clean separation of developer roles. JPublish includes support for multiple templating engines, including Jakarta Apache's Velocity, FreeMarker and WebMacro. JPublish supports numerous scripting languages including Python, BeanShell, Groovy, recently added JRuby,,experimental,, and JavaScript. JPublish is modular and provides support for easy extensibility.
+
+
+= Installation =
+
+JPublish requires JDK 1.4 or higher and a servlet engine which is compatible with version 2.2 or higher of the Servlet Specification. JPublish has been tested with Jetty, Tomcat, Orion and JBoss.
+
+To install JPublish you need to bind the JPublishServlet class as a servlet within the servlet engine and to configure your web site paths.
+
+JPublish includes a "Hello World" sample site which will help you become familiar with how JPublish sites are organized. To install the Hello World application follow these simple steps:
+  * checkout JPublish from our [http://jpublish.googlecode.com/svn/trunk/ SVN code repository]
+  * go to the root of the JPublish code
+  * run: ANT samples. A new folder "build/samples/hello.war" will be created
+  * copy the hello.war to your Jetty or Tomcat webapps directory 
+  * start your server and point your browser to http://localhost:8080/hello
+  * you're using now a JPublish application :)
+
+Later we'll show you how to use Actions to control your site logic, how localization works with JPublish and which is our preferred solutions (yes there are many) and at the end we'll teach you how to extend the JPublish functionality by using Modules and Components. With Modules, for example, you'll be able to dive into the wonderful world of Web2.0 and use DWR for AJAX and other goodies :)
+
+= JPublish Basics =
+
+
+= Disclaimer =
+{{{
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, 
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ POSSIBILITY OF SUCH DAMAGE.
+}}}
+
+
+
+
+
