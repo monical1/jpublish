@@ -22,8 +22,67 @@ JPublish includes a "Hello World" sample site which will help you become familia
 Later we'll show you how to use Actions to control your site logic, how localization works with JPublish and which is our preferred solutions (yes there are many) and at the end we'll teach you how to extend the JPublish functionality by using Modules and Components. With Modules, for example, you'll be able to dive into the wonderful world of Web2.0 and use DWR for AJAX and other goodies :)
 
 = JPublish Basics =
+Accessing a web page through JPublish is exactly the same as any static web content (even though it is not static.) In the background JPublish will actually do some work to locate the correct resources and template for the given page type (i.e. HTML, WML, etc.) and language based on the requested document's name as well as HTTP headers.
 
-_todo_
+Each page is a mixture of several items. First is the page definition which is XML. Your XML definitions are located in the site-root/pages directory. The directory structure of this hierarchy is an exact representation of what is available through your web site. The next component is the template which is located in the site-root/templates directory. Each page can define its default template that it will use. The final component is the content which is located in the site-root/content directory. This content is accessed through the FileSystemRepository class.
+
+*Page Definition*
+
+Each web page is defined in an XML document located in the site-root/pages. It is easiest to take an example: suppose that a visitor to your site requests the page /dogs.html. JPublish will look for the dogs.xml file in the pages directory for the page definition. If the same visitor requested /development/java/stuff.html then JPublish would look for the file /development/java/stuff.xml in the pages directory. As you can see this structure is exactly the same as the structure which visitors to your site will see.
+
+*Templates*
+
+JPublish uses by default the Velocity template engine from the Apache group for its templating language. Velocity documentation can be found at http://jakarta.apache.org/velocity. Each page has a default template which is used to render the page. Changes made to the template will be reflected throughout your web site.
+Content. Alternatively you can replace Velocity with FreeMarker or WebMacro, we'll show you later how to do that.
+
+Accessing content in JPublish is done through *repositories*. Repositories are registered at startup time through the config.xml file. Since each repository is registered with a name accessing the repository from a template is as simple as $name.get(content) where name is the repository name and content is a path to the content you are loading.
+
+There are two typical use-cases for loading content:
+  # Global content such as copyright information, navigation components, etc. Example: fs_repository.get("global/copyright.html").
+  # Request specific content. Example: fs_repository.get($page.Path).
+
+Another interesting use is to define a repository for accessing properties files. Since the SiteContext is available in your action scripts you can access properties in a resource-location independent fashion.
+
+Caching is very important for a web application and JPublish is not neglecting this fact. Repositories are using a modular cache solution: EHCache or WhirlyCache, and they can share the same cache space or use a per-repository cache space. 
+
+*Static Elements*
+
+JPublish also supports static elements such as images and other media files. JPublish will first look for any file requested in the static directory before looking in the page definitions.
+
+*Actions*
+
+The JPublish framework defines the Action interface as a way of invoking custom actions in response to form data. There are two ways to provide actions:
+
+  # Implement the Action interface and register your action with the config.xml file.
+  # Implement your action in a scripting language supported by the Bean Scripting Framework (such as BeanShell) and include the script file in the actions directory.
+
+Actions can be invoked at several different locations. JPublish currently supports 5 different locations for invoking actions:
+
+  * Startup - Actions registered in the configuration file as startup-actions will be executed when the Servlet is first loaded (which should be when the servlet engine starts.) These actions will be executed in a null context. The syntax is:
+{{{
+          <jpublish:startup-action name="script|name"/>
+}}}
+  * Global - Actions registered in the configuration file as global-actions will be executed for every request. Actions defined here can be scripts or Java classes. The syntax is:
+{{{
+          <jpublish:global-action name="script|name"/>
+}}}
+  * Path - Executed whenever a particular path is matched. The path can be a path to a file or a directory. The syntax is:
+{{{
+          <jpublish:path-action path="path" name="script|name"/>
+}}}
+  * Page - Actions can be bound to a specific page. The definition for these types of actions occurs within the page's definition document.
+  * Parameter - Executed when a page is called with an 'action' parameter. The name of this parameter can be changed by modifying the configuration element <action-identifier> (the default value action is used if there is no identifier specified in the configuration.)
+
+In order for script actions to function the scripting language's JAR files must be included in the WEB-INF/lib directory in your web application.
+
+Actions can issue cause page redirects by inserting the attribute "redirect" in the Page context. Redirects can be to a JPublish page or a URL. To issue a redirect to a JPublish page the value of "redirect" should be the path to the page without a suffix. The current page's suffix will be appended to the value of the redirect attribute. Values ending with a suffix or a slash will be considered URLs. The reasoning behind this is that a script doesn't need to know what type of page was requested (i.e. HTML, WML, etc.) rather it uses the current pages type be default.
+
+*Logging*
+
+JPublish uses log4j as its logging engine. Logging can be configured by placing a Log4J properties file called log.properties in the WEB-INF/classes directory of the application context. The example application which comes with JPublish includes a basic log configuration file.
+
+JPublish exposes an object called *syslog* in the Page context and in the scripting engine. Script and page authors can send log messages to this logging stream. Actions which are written as Java classes can also access this log stream through org.jpublish.util.LogSystem.syslog.
+
 
 = Disclaimer =
 {{{
@@ -39,7 +98,6 @@ _todo_
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
-
 
 
 
