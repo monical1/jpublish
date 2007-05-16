@@ -53,7 +53,7 @@ JPublish also supports static elements such as images and other media files. JPu
 
 The JPublish framework defines the Action interface as a way of invoking custom actions in response to form data. There are two ways to provide actions:
 
-  # Implement the Action interface and register your action with the page configuration file file.
+  # Implement the Action interface.
   # Implement your action in a scripting language supported by the Bean Scripting Framework (such as BeanShell) and include the script file in the actions directory.
 
 Actions can be invoked at several different locations. JPublish currently supports 6 different locations for invoking actions:
