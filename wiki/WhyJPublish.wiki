@@ -76,7 +76,7 @@ Actions can be invoked at several different locations. JPublish currently suppor
           <path-action path="path" name="script|name"/>
 }}}
   * Page - Actions can be bound to a specific page. The definition for these types of actions occurs within the page's definition document.
-  * Parameter - Executed when a page is called with an 'action' parameter. The name of this parameter can be changed by modifying the configuration element <action-identifier> (the default value action is used if there is no identifier specified in the configuration.)
+
 
 In order for script actions to function the scripting language's JAR files must be included in the WEB-INF/lib directory in your web application.
 
@@ -103,5 +103,4 @@ JPublish exposes an object called *syslog* in the Page context and in the script
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
-
 
