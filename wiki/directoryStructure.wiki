@@ -2,7 +2,7 @@
 
 == JPublish Directory Structure ==
 
-JPublish stores files in several different directories. The default structure of a JPublish site is:
+JPublish stores files in several different directories. The default structure of a  JPublish site is:
 
   * actions
   * content
@@ -12,7 +12,7 @@ JPublish stores files in several different directories. The default structure of
   * WEB-INF
     ** lib
 
-This directory structure is designed to reflect the way in which development groups are typically organized. Content is held in one location so it easy for content developers to work with while templates are contained in another directory for template designers, and so on.
+ This directory structure is designed to reflect the way in which development groups are typically organized. Content is held in one location so it easy for content developers to work with while templates are contained in another directory for template designers, and so on.
 
 All directories can can have nested sub directories and files.
 
@@ -46,7 +46,41 @@ Content is not limited to files in the filesystem. Any class which implements th
 
 == WEB-INF ==
 
-The WEB-INF directory contains all of the JPublish configuration files as well as files required by the servlet engine.
+*1.* The WEB-INF directory contains all of the JPublish configuration files as well as files required by the servlet engine.
 
 Note that except for the WEB-INF directory all of the other directories can be specified in the JPublish configuration file using relative or full paths.
 
+== Examples ==
+A JPublish web application where the Developer defines the folders described earlier inside the WEB-INF folder, leaving only the public (static) folder in the root of the web application:
+
+  * public
+  * WEB-INF
+    ** lib
+    ** templates
+    ** actions
+    ** content
+    ** pages
+
+For the directory structure above the JPublish configuration file will contain the following relevant details:
+_snapshot_
+
+{{{
+    <static-root>public</static-root>
+    <action-root>WEB-INF/actions</action-root>
+    <template-root>WEB-INF/templates</template-root>
+    <page-root>WEB-INF/pages</page-root>
+    ...
+    <repository name="fs_repository" classname="org.jpublish.repository.filesystem.FileSystemRepository">
+        <root>WEB-INF/content</root>
+    </repository>
+
+}}}
+
+
+*2.* Obviously you can use fully qualified folder addresses:
+{{{
+    <static-root>/Users/flop/Public/DropBox</static-root>
+    <action-root>WEB-INF/actions</action-root>
+....
+}}}
+With the configuration above, JPublish will serve public content from: */Users/flop/Public/DropBox*
