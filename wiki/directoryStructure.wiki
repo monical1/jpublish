@@ -46,12 +46,12 @@ Content is not limited to files in the filesystem. Any class which implements th
 
 == WEB-INF ==
 
-*1.* The WEB-INF directory contains all of the JPublish configuration files as well as files required by the servlet engine.
+The WEB-INF directory contains all of the JPublish configuration files as well as files required by the servlet engine.
 
 Note that except for the WEB-INF directory all of the other directories can be specified in the JPublish configuration file using relative or full paths.
 
 == Examples ==
-A JPublish web application where the Developer defines the folders described earlier inside the WEB-INF folder, leaving only the public (static) folder in the root of the web application:
+*1. *A JPublish web application where the Developer defines the folders described earlier inside the WEB-INF folder, leaving only the public (static) folder in the root of the web application:
 
   * public
   * WEB-INF
@@ -77,10 +77,11 @@ _snapshot_
 }}}
 
 
-*2.* Obviously you can use fully qualified folder addresses:
+*2. *Obviously you can use fully qualified folder addresses:
 {{{
-    <static-root>/Users/flop/Public/DropBox</static-root>
+    <static-root>/Users/flop/Public/Dropbox</static-root>
     <action-root>WEB-INF/actions</action-root>
 ....
 }}}
-With the configuration above, JPublish will serve public content from: */Users/flop/Public/DropBox*
+With the configuration above, JPublish will serve public content from: */Users/flop/Public/Dropbox*
+
