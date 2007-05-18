@@ -61,7 +61,7 @@ Note that except for the WEB-INF directory all of the other directories can be s
     ** content
     ** pages
 
-For the directory structure above the JPublish configuration file will contain the following relevant details:
+For the directory structure above, your JPublish configuration file (WEB-INF/jpublish.xml) will contain the following relevant details:
 _snapshot_
 
 {{{
@@ -84,4 +84,3 @@ _snapshot_
 ....
 }}}
 With the configuration above, JPublish will serve public content from: */Users/flop/Public/Dropbox*
-
