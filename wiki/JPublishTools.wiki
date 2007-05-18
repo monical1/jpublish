@@ -1,5 +1,5 @@
 #summary JPublish tools
-#labels Featured,tools
+#labels tools
 
 = JPublish Tools =
 
