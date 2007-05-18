@@ -1,5 +1,5 @@
 #summary Page dedicated to the JPublish Components.
-#labels Featured,components
+#labels components
 
 = Components =
 
