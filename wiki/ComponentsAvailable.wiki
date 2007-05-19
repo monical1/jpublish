@@ -1,0 +1,6 @@
+#summary components distributed with JPublish
+#labels components
+
+= Components available in JPublish =
+
+todo
