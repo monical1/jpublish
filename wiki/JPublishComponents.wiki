@@ -24,3 +24,6 @@ jpublish.xml:
 For a complete Component example, check the components folder in our source repository.
 
 For a live demo of one of our most used components, the Tag Cloud, you may also be interested in reading this small blog [http://weblog.flop.ca/2006/10/21/1161474590401.html article].
+
+[ComponentsAvailable]
+
