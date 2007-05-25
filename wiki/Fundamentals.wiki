@@ -14,3 +14,5 @@ JPublish web sites consist of several elements which are separated by the roles 
 
 Simply put, JPublish lets designers work on template design, authors create content, programmers develop actions, and integrators can connect all of the pieces into pages. The clear separation of roles provided by JPublish makes team development much easier and can help speed development and clarify projects, even with only one developer. All of these elements are assembled into complete pages by the JPublish engine at request-time.
 
+
+[JPublishUserGuide Go back]
