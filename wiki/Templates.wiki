@@ -1,0 +1,9 @@
+#summary Templates.
+
+= Templates =
+
+Templates are the files which are used by graphic designers to provide the visual "shell" for your web site.  
+
+Most sites will only have one template which is applied to all pages within the web site. By default this file is located in the *templates* directory and is called *basic.html*. You could also provide default site-wide templates for other types of content, WML for example, by putting an appropriate template file in the templates example. In the case of WML you could call it basic.wml and then all requests which end with .wml would use that primary template.
+
+Templates use the same template language as content for including dynamic content. Velocity is used by default as the template language, but the template engine can be changed to other supported template engines such as FreeMarker or WebMacro. Designers have access to the same context elements as content authors.
