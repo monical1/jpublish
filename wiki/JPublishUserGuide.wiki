@@ -7,7 +7,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
   * Installing
   * [Fundamentals]
     * [Templates]
-    * Content
+    * [Content]
     * Actions
     * Pages
     * Static Resources
