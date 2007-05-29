@@ -9,6 +9,8 @@ Most sites will only have one template which is applied to all pages within the 
 
 Templates use the same template language as content for including dynamic content. Velocity is used by default as the template language, but the template engine can be changed to other supported template engines such as FreeMarker or WebMacro. Designers have access to the same context elements as content authors.
 
+==DETAILS==
+
 As described before, templates are used by designers to provide the appearance of your web site. Thanks to JPublish's template system, designers can work on a single template which can be applied to the whole site.  Changes to the template will be reflected throughout the site without having to go through the tedious process of updating every single page. Additionally, because the template wraps the page, as opposed to the page including parts of the template, template designers can be assured that their designs will remain intact throughout the site.
 
 Typically templates will be placed in the templates directory which is found in the web application's root directory. You have many templates in this directory and you can even refer to templates which are in nested subdirectories. The template directory can be changed by specifying the template root in the jpublish.xml configuration file using the format {{{<template-root>path</template-root>}}}.
