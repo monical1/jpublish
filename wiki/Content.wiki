@@ -1,7 +1,7 @@
 #summary Content, repositories
 #labels content,repository
 
-= Content Dircetories =
+= Content Directories =
 
 Content directories contain parsed content which is included in your pages. Most often there will be one piece of content for each page found in the pages directory as well as global content such as menus, headers and footers. Content which is placed in an HTML template should not include the html, head and body tags.
 
