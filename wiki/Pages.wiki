@@ -15,7 +15,7 @@ The following is an example of properties in a page definition:
   <property name="title" locale="fr">Titre de Page</property>
 }}}
 
-While the above i18n solution is a handy one, we encourage you to look at our i18n module which integrates the localization support of Spring with JPublish. This is the preferred solution for any serious JPublish web site. 
+While the above i18n solution is a handy one, we encourage you to look at our [http://jpublish.googlecode.com/svn/trunk/modules/i18n/ i18n module] which integrates the localization support of [http://www.springframework.org/ Spring] with JPublish. This is the preferred solution for any serious JPublish web site. 
 
 In addition to page properties the page definition can also specify the template to use when rendering the page. This allows pages to have a custom template which is different from the default site template:
 
