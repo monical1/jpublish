@@ -1,4 +1,5 @@
 #summary JPublish pages.
+#labels pages
 = Pages =
 
 Pages provide meta data about particular requested page paths. When a request is received for repository content the JPublish servlet will first attempt to find a page object for that request path. By default if no page object is found then JPublish will return a 404 error (page not found).
