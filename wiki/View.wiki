@@ -14,6 +14,18 @@ The Velocity view renderer uses the Velocity template engine from the Jakarta pr
 
 Velocity provides a means for having global macros which are defined together in a single file and which can then be used throughout your application. JPublish requires that this file, if it is used, be called VM_global_library.vm and should be placed in the WEB-INF/classes directory.
 
+Velocity is the default JPublish view renderer, and here is a jpublish.xml fragment with a more detailed Velocity configuration:
+{{{
+    <!--Velocity renderer-->
+    <view-renderer classname="org.jpublish.view.velocity.VelocityViewRenderer">
+        <velocity-properties relative-paths="true">WEB-INF/velocity.properties</velocity-properties>
+        <resource-cache-enabled>true</resource-cache-enabled>
+        <!--seconds-->
+        <resource-cache-interval>15</resource-cache-interval>
+    </view-renderer>
+}}}
+
+
 ===FreeMarker===
 
 The FreeMarker view renderer uses the FreeMarker template engine for rendering views. The FreeMarker engine provides a larger set of features when compared to Velocity and therefore may be a desirable alternative to Velocity.
@@ -26,4 +38,3 @@ Building Your Own
 To build your own view renderer you must implement the {{{org.jpublish.view.ViewRenderer interface}}}. This interface has 5 methods which must be implemented. The setSiteContext() method should store the current SiteContext in an internal field so that other methods of the renderer can make use of the SiteContext's methods if necessary. The loadConfiguration() method is called on startup. The Configuration object which is passed as a parameter contains an object representation of the XML tree rooted at the view renderer declaration in the jpublish.xml configuration file. Immediately after the loadConfiguration() method is called the init() method is called. The init() method can be used to initialize the rendering engine if necessary and has access to the SiteContext object as well as the Configuration object which was passed during the call to loadConfiguration(). The render() method is called each time a piece of content is rendered. There are two versions of this method, one which takes an InputStream and one which takes a Writer.
 
 Note: ViewRenderer implementations should strive to make use of caching mechanisms provided by template engines so as to avoid extra unnecessary template parsing.
-
