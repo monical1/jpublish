@@ -4,7 +4,7 @@
 = Introduction =
 Welcome to the world of JPublish. This is a world of truly dynamic web applications - not just dynamic for your customers but dynamic for your developers too. JPublish provides a powerful system for managing your web site's content as well as your web site's application logic. Let's jump right in then...
 
-  * Installing
+  * [WhyJPublish Installing]
   * [Fundamentals]
     * [Templates]
     * [Content]
