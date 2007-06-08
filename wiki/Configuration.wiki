@@ -6,7 +6,7 @@ JPublish's primary configuration is contained in a single configuration file typ
 
 JPublish also requires several entries in the web.xml file, also located in the WEB-INF directory. The JPublishServlet class must be registered as a servlet and paths must be overriden so that JPublish will handle all requests. Additionally, you can change the location of the jpublish.xml file in the web.xml configuration although this is not recommended.
 
-Example of a jpublish.xml file where Velocity is the ViewRenderer:
+Example of a *WEB-INF/jpublish.xml* file where Velocity is the [View ViewRenderer]:
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
