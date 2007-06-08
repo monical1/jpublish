@@ -1,6 +1,6 @@
 #summary JPublish configuration file.
 
-= Configuration
+= Configuration =
 
 JPublish's primary configuration is contained in a single configuration file typically called jpublish.xml residing in the WEB-INF directory. The JPublish configuration file is an XML document which contains information about repositories, cache managers, error handlers, actions and more. JPublish attempts to provide reasonable defaults for most of the configuration options so you only have to provide configuration elements where you need to change the default behavior.
 
