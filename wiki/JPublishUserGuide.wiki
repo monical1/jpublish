@@ -8,23 +8,23 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
   * [Fundamentals]
     * [Templates]
     * [Content]
-    * Actions
-    * Pages
-    * Static Resources
+    * [Actions]
+    * [Pages]
+    * [Static Resources]
   * View Renderers
-    * Velocity
-    * FreeMarker
-    * WebMacro
-    * Building Your Own
-  * Modules
-  * Components
-  * Configuration
-  * Context
+    * [Velocity]
+    * [FreeMarker]
+    * [WebMacro]
+    * [Building Your Own]
+  * [Modules]
+  * [Components]
+  * [Configuration]
+  * [Context]
   * Additional Features
-    * Internationalization
+    * [Internationalization]
     * [Errorhandling Error Handling]
-    * Utilities
-  * Dependencies
+    * [Utilities]
+  * [Dependencies]
   * Disclaimer
 
 == Acknowledgments ==
