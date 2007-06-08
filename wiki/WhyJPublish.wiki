@@ -12,7 +12,7 @@ JPublish requires JDK 1.4 or higher and a servlet engine which is compatible wit
 
 To install JPublish you need to bind the JPublishServlet class as a servlet within the servlet engine and to configure your web site paths.
 
-JPublish includes a "Hello World" sample site which will help you become familiar with how JPublish sites are organized. To install the Hello World application follow these simple steps:
+JPublish includes a "Hello World" ([http://jpublish.googlecode.com/files/hello.war.zip download .zip]) sample site which will help you become familiar with how JPublish sites are organized. To install the Hello World application follow these simple steps:
   * checkout JPublish from our [http://jpublish.googlecode.com/svn/trunk/ SVN code repository]
   * go to the root of the JPublish code
   * run: ANT samples. A new folder "build/samples/hello.war" will be created
