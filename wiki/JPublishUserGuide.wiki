@@ -11,11 +11,11 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
     * [Actions]
     * [Pages]
     * [Static Resources]
-  * View Renderers
-    * [Velocity]
-    * [FreeMarker]
-    * [WebMacro]
-    * [Building Your Own]
+  * [View Renderers]
+    * Velocity
+    * FreeMarker
+    * WebMacro
+    * Building Your Own
   * [Modules]
   * [Components]
   * [Configuration]
