@@ -9,6 +9,17 @@ The JPublish context is a map of objects which are made available to actions and
 Actions which need to expose objects to the view layer need only execute {{{context.put("name", value)}}}.
 
 
+There are number of variables which are available in the context:
+||Name|| 	Class ||	Description ||	Availability||
+||syslog ||	org.apache.commons.logging.Log ||	A log object which can be used by the script to print to a log called syslog. 	Always||
+||site ||	org.jpublish.SiteContext ||	The SiteContext.|| 	Always||
+||request ||	javax.servlet.http.HttpServletRequest ||	The HTTP servlet request. ||	All except for startup, shutdown and pre-evaluation||
+||response ||	javax.servlet.http.HttpServletResponse ||	The HTTP servlet response. ||	All except for startup, shutdown and pre-evaluation||
+||session ||	javax.servlet.http.HttpSession ||	The HTTP session object. ||	All except for startup, shutdown and pre-evaluation||
+||application ||	javax.servlet.ServletContext ||	The HTTP servlet context. ||	All except for startup, shutdown and pre-evaluation||
+||page ||	org.jpublish.Page ||	The Page object. ||	All except for startup, shutdown and pre-evaluation||
+
+
 *{{{SiteContext}}}*
 
 The SiteContext object is created when JPublish first loads and is available throughout the life of the JPublish application. The SiteContext contains a wide arrange of objects which are used through the JPublish framework. Through the SiteContext you can access most of the jpublish.xml configuration settings as well as the objects which are created when the JPublish configuration is loaded.
