@@ -35,7 +35,7 @@ There are number of variables which are automatically exposed to script actions:
 
 Developers should note that the performance of JPublish can be severely impacted by the performance of any scripting language which is used for actions since some scripting language implementations perform better than others.
 
-Actions written in Java must implement the org.jpublish.action.Action interface which consists of a single method: public String execute(JPublishRequest request, Configuration configuration). The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
+Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface which consists of a single method: public String execute(JPublishRequest request, Configuration configuration). The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
 {{{
     <page-action name="MyPageAction">
         <sometag foo="bar">Baz</sometag>
@@ -48,4 +48,3 @@ Note: Actions written in Java must implement the {{{org.jpublish.action.Action}}
 
 Note: If you are using Jython with JPublish then you can place the registry file, which is a global configuration for Jython, in the same directory as the jython.jar file. This is the easiest way to configure Jython. You can use the registry file to tell Jython where to find the Python Lib directory, an important step if you plan on using pure Python libraries from CPython. Note that there may be problems using libraries from CPython. Please consult the Jython documentation or mailing lists for more information.
 Pages
-
