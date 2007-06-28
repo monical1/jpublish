@@ -24,4 +24,6 @@ There are number of variables which are available in the context:
 
 The SiteContext object is created when JPublish first loads and is available throughout the life of the JPublish application. The SiteContext contains a wide arrange of objects which are used through the JPublish framework. Through the SiteContext you can access most of the jpublish.xml configuration settings as well as the objects which are created when the JPublish configuration is loaded.
 
+The SiteContext can be also used for storing object instances visible to the entire JPublish citizens: Actions, Pages, Modules, Components, etc. 
 
+Save and retrieve objects: {{{site.setAttribute( "foo", "bar")}}} or {{{site.getAttribute( "foo")}}}
