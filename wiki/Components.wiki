@@ -1,0 +1,19 @@
+#summary JPublish components
+
+= JPublish Components =
+
+JPublish includes a component architecture which provides a framework for creating reusable JPublish components. A JPublish component is a collection of actions and views which can be placed directly in content.
+
+Components must either implement the org.jpublish.JPublishComponent interface or extend from the {{{org.jpublish.component.AbstractComponent}}} abstract base class. Components should provide a name and description of the component for future use. Components which extend from the AbstractComponent base class need only implement the render() method and they can actually delegate responsibility of rendering to a component-specific view renderer.
+
+Components are defined in the jpublish.xml configuration as children of a component manager. JPublish currently supports only a single component manager but that component manager can have as many child components as necessary. The configuration would appear like this:
+{{{
+    <component-manager>
+        <components>
+            <component id="component_id" classname="com.mycompany.MyComponent">
+            <repository name="repository_id"/>
+            </component>
+        </components>
+    </component-manager>
+}}}
+The repository name can be set to any repository which is defined in the jpublish.xml configuration file. If the component extends from AbstractComponent and delegates rendering to the {{{AbstractComponent.renderView()}}} method then the content will be pulled from the specified repository. This allows a component to provide logic and a basic view but at the same time allows individual sites the ability to customize component views as necessary.
