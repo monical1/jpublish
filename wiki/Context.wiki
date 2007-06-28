@@ -10,14 +10,14 @@ Actions which need to expose objects to the view layer need only execute {{{cont
 
 
 There are number of variables which are available in the context:
-||Name|| 	Class ||	Description ||	Availability||
-||syslog ||	org.apache.commons.logging.Log ||	A log object which can be used by the script to print to a log called syslog. 	Always||
-||site ||	org.jpublish.SiteContext ||	The SiteContext.|| 	Always||
-||request ||	javax.servlet.http.HttpServletRequest ||	The HTTP servlet request. ||	All except for startup, shutdown and pre-evaluation||
-||response ||	javax.servlet.http.HttpServletResponse ||	The HTTP servlet response. ||	All except for startup, shutdown and pre-evaluation||
-||session ||	javax.servlet.http.HttpSession ||	The HTTP session object. ||	All except for startup, shutdown and pre-evaluation||
-||application ||	javax.servlet.ServletContext ||	The HTTP servlet context. ||	All except for startup, shutdown and pre-evaluation||
-||page ||	org.jpublish.Page ||	The Page object. ||	All except for startup, shutdown and pre-evaluation||
+||Name|| 	Class ||	Description ||
+||syslog ||	org.apache.commons.logging.Log || system logger||
+||site ||	org.jpublish.SiteContext ||	The SiteContext.|| 
+||request ||	javax.servlet.http.HttpServletRequest ||	The HTTP servlet request. ||
+||response ||	javax.servlet.http.HttpServletResponse ||	The HTTP servlet response. ||
+||session ||	javax.servlet.http.HttpSession ||	The HTTP session object. ||
+||application ||	javax.servlet.ServletContext ||	The HTTP servlet context. ||
+||page ||	org.jpublish.Page ||	The Page object. ||
 
 
 *{{{SiteContext}}}*
