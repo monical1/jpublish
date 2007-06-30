@@ -22,6 +22,5 @@ The repository name can be set to any repository which is defined in the jpublis
 *Available Components by category*
 
 ==View, rendering, formatting support==
-  * [http://jpublish.googlecode.com/svn/trunk/components/jptextile/ JPTextile] - Textile syntax and rendering support. With this component you can easily format and render textile content in JPublish views.
-  * [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/ JPTagCloud] - This is a JPublish component which displays a Tag Cloud. A [http://tagcloud.flop.ca/ Live demo] and the associated [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/README.txt README filr].
-
+  * [http://jpublish.googlecode.com/svn/trunk/components/jptextile/ JPTextile] - [http://en.wikipedia.org/wiki/Textile_(markup_language) Textile syntax] and rendering support. With this component you can easily format and render textile content in JPublish views.
+  * [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/ JPTagCloud] - This is a JPublish component which displays a Tag Cloud. A [http://tagcloud.flop.ca/ Live demo] and the associated [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/README.txt README file].
