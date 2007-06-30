@@ -1,0 +1,20 @@
+#summary JPublish modules
+
+= What Is a Module? =
+
+JPublish is extended through modules. Modules must implement the {{{org.jpublish.JPublishModule}}} interface. Modules do not actually handle every request which is passed to the JPublish system, rather it exposes actions which can be used wherever JPublish actions can be used.
+
+*Writing Modules*
+
+JPublish modules consist of a class which implements the {{{org.jpublish.JPublishModule}}} interface as well as one or more classes which implement the Action interface. Modules can be thought of as a collection of actions which are related. To deploy a module just include the module with its actions in the classpath. The easiest way to do this is to include everything in a single JAR file.
+
+
+*Available modules by category*
+
+== Localization, I18n, etc. ==
+  * [http://jpublish.googlecode.com/svn/trunk/modules/i18n/ JPublishI18n] - This is a Spring based JPublish - i18n solution.
+
+== Ajax, etc. ==
+  * [http://jpublish.googlecode.com/svn/trunk/modules/dwr/ JPublishDWR] - This is the JPublish - DWR integration module
+
+
