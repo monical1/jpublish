@@ -20,7 +20,40 @@ JPublish includes a "Hello World" ([http://jpublish.googlecode.com/files/hello.w
   * start your server and point your browser to http://localhost:8080/hello
   * you're using now a JPublish application :)
 
-Later we'll show you how to use Actions to control your site logic, how localization works with JPublish and which is our preferred solutions (yes there are many) and at the end we'll teach you how to extend the JPublish functionality by using Modules and Components. With Modules, for example, you'll be able to dive into the wonderful world of Web2.0 and use DWR for AJAX and other goodies :)
+To build an empty JPublish web application go to the folder where you have downloaded/checkout or exported the JPublish SVN code and use ant: *$ ant empty-web-app*
+
+An empty JPublish web application containing all the required libraries and a very basic site structure will be created in: *build/samples/empty.war*
+
+Copy/move/rename the empty.war and use it in your Servlet container of choice.
+
+Few hints for the impatient :)
+{{{
+1. To modify the home page layout, edit the file: 
+	empty.war/templates/basic.html
+	
+2. To modify the home page contents, edit the file: 
+	empty.war/content/index.html
+
+3. The simple CSS file is situated here: empty.war/public/styles/simple.css
+
+4. To add and use a scripting action:
+ - create a new Beanshell (bsh) or a Rhino(js) Action script in the empty.war/actions folder
+ - use the new Action in the page you need by declaring the new Action in the page
+   specific xml file: 
+     <page-action name="the newly created action"/> 
+   Example:
+     if you created a new Action: TestAction.bsh and you want to use this action
+     in a page called content/test.html, then modify the page descriptor: pages/text.xml
+     and add the action. Your pages/text.xml file should look like this:
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <page>
+          <template>basic</template>
+          <page-action name="TestAction.bsh"/>
+        </page>
+}}}
+
+Later we'll show you how to use Actions to control your site logic, how localization works with JPublish and which is our preferred i18n solution (yes there are many) and at the end we'll teach you how to extend the JPublish functionality by using Modules and Components. With Modules, for example, you'll be able to dive into the wonderful world of Web2.0 and use DWR for AJAX and other goodies :)
 
 = JPublish Basics =
 Accessing a web page through JPublish is exactly the same as any static web content (even though it is not static.) In the background JPublish will actually do some work to locate the correct resources and template for the given page type (i.e. HTML, WML, etc.) and language based on the requested document's name as well as HTTP headers.
@@ -104,3 +137,6 @@ JPublish exposes an object called *syslog* in the Page context and in the script
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
+
+
+
