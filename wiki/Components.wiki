@@ -1,4 +1,5 @@
 #summary JPublish components
+#labels components
 
 = JPublish Components =
 
@@ -17,3 +18,10 @@ Components are defined in the jpublish.xml configuration as children of a compon
     </component-manager>
 }}}
 The repository name can be set to any repository which is defined in the jpublish.xml configuration file. If the component extends from AbstractComponent and delegates rendering to the {{{AbstractComponent.renderView()}}} method then the content will be pulled from the specified repository. This allows a component to provide logic and a basic view but at the same time allows individual sites the ability to customize component views as necessary.
+
+*Available Components by category*
+
+==View, rendering, formatting support==
+  * [http://jpublish.googlecode.com/svn/trunk/components/jptextile/ JPTextile] - Textile syntax and rendering support. With this component you can easily format and render textile content in JPublish views.
+  * [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/ JPTagCloud] - This is a JPublish component which displays a Tag Cloud. A [http://tagcloud.flop.ca/ Live demo] and the associated [http://jpublish.googlecode.com/svn/trunk/components/tagCloud/README.txt README filr].
+
