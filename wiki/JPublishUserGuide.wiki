@@ -14,7 +14,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
   * [View Renderers]
     * [http://velocity.apache.org/ Velocity]
     * [http://freemarker.sourceforge.net/ FreeMarker]
-    * [Building Your Own]
+    * [BldYourOwnViewer Building Your Own]
   * [Modules]
   * [Components]
   * [Configuration]
