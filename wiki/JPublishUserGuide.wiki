@@ -13,6 +13,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
     * [StaticResources Static Resources]
   * [View Renderers]
     * [http://velocity.apache.org/ Velocity]
+    * [http://www.stringtemplate.org/ StringTemplate]
     * [http://freemarker.sourceforge.net/ FreeMarker]
     * [BldYourOwnViewer Building Your Own]
   * [Modules]
