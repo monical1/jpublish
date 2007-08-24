@@ -25,6 +25,30 @@ Velocity is the default JPublish view renderer, and here is a jpublish.xml fragm
     </view-renderer>
 }}}
 
+===StringTemplate===
+The StringTemplate view renderer is using the StringTemplate engine. To activate this ViewRenderer, modify your jpublish.xml as follows:
+{{{
+<!--StringTemplate Viewer-->
+<view-renderer classname="org.jpublish.view.stringtemplate.StringTemplateViewRenderer">
+    <!--<lexer class="org.antlr.stringtemplate.language.AngleBracketTemplateLexer"/>-->
+    <lexer class="org.antlr.stringtemplate.language.DefaultTemplateLexer"/>
+    <!-- todo: <error-listener class=""/>-->
+    <refresh-interval>15</refresh-interval>
+</view-renderer>
+}}}
+
+and be sure to configure JPublish with the default index file as *index.st*. To do this simple add:
+{{{
+<default-page>index.st</default-page>
+}}} 
+to your jpublish.xml config file.
+
+Also, specify the mime type for the new resource type, also in jpublish.xml:
+{{{
+<mime-mapping ext="st" mimetype="text/html"/>
+}}}
+
+For learning more about StringTemplate, follow this link: [http://www.antlr.org/wiki/x/zwQ StringTemplate documentation].
 
 ===FreeMarker===
 
@@ -55,3 +79,6 @@ To build your own view renderer you must implement the {{{org.jpublish.view.View
 Note: ViewRenderer implementations should strive to make use of caching mechanisms
       provided by template engines so as to avoid extra unnecessary template parsing.
 }}}
+
+
+
