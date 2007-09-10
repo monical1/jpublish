@@ -42,9 +42,9 @@ Few hints for the impatient :)
    specific xml file: 
      <page-action name="the newly created action"/> 
    Example:
-     if you created a new Action: TestAction.bsh and you want to use this action
-     in a page called content/test.html, then modify the page descriptor: pages/text.xml
-     and add the action. Your pages/text.xml file should look like this:
+     if you created a new Action: TestAction.bsh, and you want to use this action
+     in a page called content/test.html, then modify the page descriptor: pages/test.xml
+     and add the action. Your pages/test.xml file should look like this:
 
         <?xml version="1.0" encoding="UTF-8"?>
         <page>
@@ -137,6 +137,7 @@ JPublish exposes an object called *syslog* in the Page context and in the script
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
+
 
 
 
