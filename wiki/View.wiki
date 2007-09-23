@@ -28,8 +28,12 @@ Velocity is the default JPublish view renderer, and here is a jpublish.xml fragm
 If you want to learn more about Velocity you can visit the following links:
 
 [http://velocity.apache.org/engine/devel/index.html APACHE Velocity]
+
 [http://click.sourceforge.net/docs/velocity/vtl-reference-guide.html Velocity VTL Reference] at [http://click.sourceforge.net/ CLICK web framework]
+
 [http://jpublish.googlecode.com/files/VelocityUsersGuide.pdf Velocity 1.5 User Guide]
+
+
 
 
 ===[http://www.stringtemplate.org/ StringTemplate]===
@@ -89,6 +93,7 @@ Note: ViewRenderer implementations should strive to make use of caching mechanis
 
 
 
+ 
  
  
  
