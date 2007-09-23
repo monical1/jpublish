@@ -8,7 +8,7 @@ JPublish provides a means for plugging in a variety of view renderers. This flex
 
 to the jpublish.xml configuration file. The body of the view-renderer element can contain XML configuration information which is passed to the view renderer when it is loaded.
 
-===Velocity===
+===[http://velocity.apache.org/engine/devel/index.html Velocity]===
 
 The Velocity view renderer uses the Velocity template engine from the Jakarta project.
 
@@ -25,7 +25,14 @@ Velocity is the default JPublish view renderer, and here is a jpublish.xml fragm
     </view-renderer>
 }}}
 
-===StringTemplate===
+If you want to learn more about Velocity you can visit the following links:
+
+[http://velocity.apache.org/engine/devel/index.html APACHE Velocity]
+
+[http://click.sourceforge.net/docs/velocity/vtl-reference-guide.html Velocity VTL Reference] at [http://click.sourceforge.net/ CLICK web framework]
+
+
+===[http://www.stringtemplate.org/ StringTemplate]===
 The StringTemplate view renderer is using the StringTemplate engine. To activate this ViewRenderer, modify your jpublish.xml as follows:
 {{{
 <!--StringTemplate Viewer-->
@@ -82,3 +89,5 @@ Note: ViewRenderer implementations should strive to make use of caching mechanis
 
 
 
+ 
+ 
