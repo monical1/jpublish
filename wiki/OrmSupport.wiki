@@ -9,7 +9,36 @@ This page is about various ORM frameworks supported by JPublish.
 =Cayenne=
 Cayenne is a Java object relational mapping (ORM) framework. In other words, it is a tool for Java developers who need to talk to a database (or many databases). Rather than hardcoding SQL statements through Java code, Cayenne allows a programmer to work only with Java objects abstracted from the database. Cayenne is supported via a JPublish Module integration. For a complete description of Cayenne's features, please visit Cayenne's own [http://cayenne.apache.org/ site].
 
+To enable Cayenne support in a JPublish web application you have to add the new JPCayenneModule to the jpublish.xml configuration file. For example:
+
+{{{
+    <!--JPublish Cayenne support -->
+    <module classname="org.jpublish.module.cayenne.JPCayenneModule">
+        <cayenne-config-path>/WEB-INF/cayenne</cayenne-config-path>
+        <auto-rollback>true</auto-rollback>
+        <session-scope>false</session-scope>
+        <shared-cache>true</shared-cache>
+
+        <!--
+         ~ Http request paths using a per-request or a per-session Cayenne ObjectContext (OC),
+         ~ the read-only paths will be interpreted first and will use a global OC one defined
+         ~ per web app instance.
+         ~ -->
+        <cayenne-enabled-urls>
+            <url path="/info/*" readonly="true"/>
+            <url path="/status/*" readonly="true"/>
+            <url path="/rss/*" readonly="true"/>
+            <url path="/users/*" readonly="false"/>
+            <url path="/companies/*"/> <!-- readonly="false" by default, if not defined -->
+        </cayenne-enabled-urls>
+
+        <debug>true</debug>
+    </module>
+}}}
+
+Let's explain the above configuration:
 _tbd_
 
+ 
  
  
