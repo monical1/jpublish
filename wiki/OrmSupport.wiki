@@ -1,0 +1,15 @@
+#labels cayenne,orm,database
+#ORM support from JPublish
+
+= Introduction =
+
+This page is about various ORM frameworks supported by JPublish.
+
+
+=Cayenne=
+Cayenne is a Java object relational mapping (ORM) framework. In other words, it is a tool for Java developers who need to talk to a database (or many databases). Rather than hardcoding SQL statements through Java code, Cayenne allows a programmer to work only with Java objects abstracted from the database. Cayenne is supported via a JPublish Module integration. For a complete description of Cayenne's features, please visit Cayenne's own [http://cayenne.apache.org/ site].
+
+_tbd_
+
+ 
+ 
