@@ -69,7 +69,7 @@ if( jpCayenneService!= null){
 }
 }}} 
 
-Below are the main methods of the jpCayenneService (closely following the examples from Malcolm Edgarand and Andrei Adamchik) and their related Java comments:
+Below are the main methods of the jpCayenneService (closely following the [http://cwiki.apache.org/CAY/spring-integration-examples.html examples from Cayenne's Wiki]) and their related Java comments:
 {{{
 /**
  * Instantiates new object and registers it with itself. Object class must
