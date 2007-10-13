@@ -60,7 +60,6 @@ jpCayenneService = context.get( JPCayenneModule.JPCAYENNE_SERVICE_NAME);
 if( jpCayenneService!= null){
 	Expression qual = ExpressionFactory.likeIgnoreCaseExp("name", "%");
 	SelectQuery select = new SelectQuery(User.class, qual);
-    //select.addPrefetch("todos");
 
     users = jpCayenneService.performQuery( select);
 
