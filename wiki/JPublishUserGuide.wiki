@@ -27,6 +27,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
   * [OrmSupport ORM]
   * [Dependencies]
   * [ROADMAP]
+  * [WhoIsUsingJPublish]
   * Acknowledgments
   * Disclaimer
 
