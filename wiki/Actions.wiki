@@ -24,18 +24,18 @@ Actions which are not pre-defined using the <define-action> element will be loca
 
 There are number of variables which are automatically exposed to script actions:
 ||Name|| 	Class ||	Description ||	Availability||
-||syslog ||	org.apache.commons.logging.Log ||	A log object which can be used by the script to print to a log called syslog. 	Always||
+||syslog ||	org.apache.commons.logging.Log ||	A log object which can be used by the script to print to a log called syslog. ||	Always||
 ||site ||	org.jpublish.SiteContext ||	The SiteContext.|| 	Always||
 ||request ||	javax.servlet.http.HttpServletRequest ||	The HTTP servlet request. ||	All except for startup, shutdown and pre-evaluation||
 ||response ||	javax.servlet.http.HttpServletResponse ||	The HTTP servlet response. ||	All except for startup, shutdown and pre-evaluation||
 ||session ||	javax.servlet.http.HttpSession ||	The HTTP session object. ||	All except for startup, shutdown and pre-evaluation||
-||application ||	javax.servlet.ServletContext ||	The HTTP servlet context. ||	All except for startup, shutdown and pre-evaluation||
+||application ||	javax.servlet.ServletContext ||	The HTTP servlet context. ||	Always||
 ||page ||	org.jpublish.Page ||	The Page object. ||	All except for startup, shutdown and pre-evaluation||
 ||configuration|| 	com.anthonyeden.lib.config.Configuration ||	The Page object. ||	All except for startup, shutdown and pre-evaluation||
 
 Developers should note that the performance of JPublish can be severely impacted by the performance of any scripting language which is used for actions since some scripting language implementations perform better than others.
 
-Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface which consists of a single method: public String execute(JPublishRequest request, Configuration configuration). The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
+Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface which consists of a single method: {{{public String execute(JPublishRequest request, Configuration configuration)}}}. The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
 {{{
     <page-action name="MyPageAction">
         <sometag foo="bar">Baz</sometag>
