@@ -8,6 +8,8 @@
 *ORM support*
   * Cayenne  (via JPCayenneModule)  --> AVAILABLE <--
 
+*DWR/Ajax support*
+  * ability to remotely execute JPublish Actions -> implementation *done*, to be committed <- 
 
 ===Version 4.01===
 *JPublish*
