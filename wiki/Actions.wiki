@@ -49,7 +49,9 @@ The request parameter contains the current request context. Actions can place ob
 
 Then the configuration parameter would be an object representation of the page-action element as well as all of its children. This provides a means for passing configuration information to the action at runtime.
 
-Note: Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface.
+Note: 
+  Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface.
 
-Note: If you are using Jython with JPublish then you can place the registry file, which is a global configuration for Jython, in the same directory as the jython.jar file. This is the easiest way to configure Jython. You can use the registry file to tell Jython where to find the Python Lib directory, an important step if you plan on using pure Python libraries from CPython. Note that there may be problems using libraries from CPython. Please consult the Jython documentation or mailing lists for more information.
+Note:
+  If you are using Jython with JPublish then you can place the registry file, which is a global configuration for Jython, in the same directory as the jython.jar file. This is the easiest way to configure Jython. You can use the registry file to tell Jython where to find the Python Lib directory, an important step if you plan on using pure Python libraries from CPython. Note that there may be problems using libraries from CPython. Please consult the Jython documentation or mailing lists for more information.
 Pages
