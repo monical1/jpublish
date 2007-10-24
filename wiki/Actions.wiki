@@ -35,7 +35,12 @@ There are number of variables which are automatically exposed to script actions:
 
 Developers should note that the performance of JPublish can be severely impacted by the performance of any scripting language which is used for actions since some scripting language implementations perform better than others.
 
-Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface which consists of a single method: {{{public String execute(JPublishRequest request, Configuration configuration)}}}. The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
+Actions written in Java must implement the {{{org.jpublish.action.Action}}} interface which consists of a single method: 
+{{{
+public String execute(JPublishRequest request, Configuration configuration)
+}}}
+
+The request parameter contains the current request context. Actions can place objects in this context and they will be available to the view layer. The second argument is a Configuration object which is an object representation of the XML contained within the action declaration. For example, if an action is defined in a page configuration as follows:
 {{{
     <page-action name="MyPageAction">
         <sometag foo="bar">Baz</sometag>
