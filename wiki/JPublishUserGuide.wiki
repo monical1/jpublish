@@ -17,6 +17,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
     * [http://freemarker.sourceforge.net/ FreeMarker]
     * [BldYourOwnViewer Building Your Own]
   * [Modules]
+    * Reverse AJAX through DWR. The [http://code.google.com/p/jpublish/wiki/JPublishDWR JPublishDWR] Module
   * [Components]
   * [Configuration]
   * [Context]
