@@ -72,4 +72,47 @@ Here is a simple example taken from our demo web application:
 }}}
 
 
-_work in progress_
+_work in progress_ todo: describe the internals of the JPublishCreator
+
+== Executing JPublish Actions ==
+[http://weblog.flop.ca/2007/10/27/1193531279888.html Now] is also possible to remotely execute any JPublish actions. This can be accomplished in a very simple way (I hope you'll agree), as illustrated below:
+
+  * first modify the dwr.xml file and define the Action you want to publish through the DWR.
+{{{
+        <init>
+           <creator id="jpublish" class="ca.flop.jpublish.dwr.JPublishCreator"/>
+        </init>
+        ...
+        <create creator="jpublish" javascript="InfoAction" scope="application">
+            <param name="class" value="ca.flop.jpublish.dwr.DWRJPublishActionManager"/>
+            <param name="actionName" value="InfoAction.bsh"/>
+        </create>
+}}}
+
+  * then define the *InfoAction.bsh*. Here is the code from our SVN example:
+{{{
+        String infoMsg = "Hi, this is JPublish 4";
+        context.put("infoMsg", infoMsg);
+        context.put("serverDate", new Date());
+        print( infoMsg);
+}}}
+ 
+  * now let's call the InfoAction in an AJAXified HTML page and display the infoMsg and the serverDate values returned by the InfoAction script,  a server side BSH script executed by JPublish. Would that be hard? What do you think? Here is the code:
+{{{
+        ..
+        <script type='text/javascript' src='$request.ContextPath/dwr/interface/InfoAction.js'/>
+        ...
+        Below is a simple demonstration of the ability to invoke JPublish Actions via DWR:<br/>
+        <input type="button" value="Info" onclick='InfoAction.execute( params, function(response) {
+            dwr.util.setValue("serverDate", response.serverDate);
+            dwr.util.setValue("info", response.infoMsg);
+          });'/><br/>
+
+        Messages received from server:<br/>
+        <div class="dateField" id="serverDate">-server date-</div>
+        <div class="salute" id="info">JPublish Salute...</div>
+}}}
+
+However, in the current implementation, the JPublishContext -required by the Actions- is a very limited one, used only to carry on the input parameters and the Action response. In a very near version, we will provide a better JPublishContext to the Actions that can be executed via DWR calls.
+
+_todo: More examples_ 
