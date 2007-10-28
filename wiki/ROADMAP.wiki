@@ -18,6 +18,8 @@
   * UI admin for user roles, permissions and resource access management
   * pluggable permission evaluator
 
+*Hibernate support via JPHibernate*
+
 
 ===Version 4.01===
 *JPublish*
@@ -41,8 +43,5 @@
   * sitelet
   * router
   
-*ORM support*
-  * Hibernate
-
 *REST support*
   * resource mapping and routing support similar to Rails
