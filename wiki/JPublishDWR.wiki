@@ -1,5 +1,5 @@
 #summary JPublish-DWR documentation.
-#labels Phase-Implementation,DWR,AJAX,Module
+#labels Phase-Implementation,DWR,AJAX,Module,example
 
 [http://groups.google.com/group/jpublish-user/web/jpublish-title.png]
 [http://getahead.org/images/dwr-logo-200.gif]
@@ -97,7 +97,7 @@ _work in progress_ todo: describe the internals of the JPublishCreator
     print( infoMsg);
 }}}
  
-  * now let's call the InfoAction in an AJAXified HTML page and display the infoMsg and the serverDate values returned by the InfoAction script,  a server side BSH script executed by JPublish. Would that be hard? What do you think? Here is the code:
+  * now let's call the *[http://jpublish.googlecode.com/svn/trunk/samples/simpledwr/web/actions/InfoAction.bsh InfoAction.bsh]* in an AJAXified HTML page and display the *infoMsg* and the *serverDate* values returned by the *[http://jpublish.googlecode.com/svn/trunk/samples/simpledwr/web/actions/InfoAction.bsh InfoAction.bsh]* script, a server side BSH script executed by JPublish. Ho hard could that be? What do you think? With JPublish everything should be simple ;) Here is the code:
 {{{
     ..
     <script type='text/javascript' src='$request.ContextPath/dwr/interface/InfoAction.js'/>
