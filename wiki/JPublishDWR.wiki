@@ -113,7 +113,7 @@ _work in progress_ todo: describe the internals of the JPublishCreator
     <div class="salute" id="info">JPublish Salute...</div>
 }}}
 
-`the code above is using Velocity syntax`
+(Note: `the code above is using Velocity syntax`)
 
 However, in the current implementation, the JPublishContext -required by the Actions- is a very limited one, used only to carry on the input parameters and the Action response. In a very near version, we will provide a better JPublishContext to the Actions that can be executed via DWR calls.
 
