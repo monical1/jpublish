@@ -12,9 +12,17 @@ JPublish modules consist of a class which implements the {{{org.jpublish.JPublis
 
 *Available modules by category*
 
+== AJAX ==
+JPublish is using the Module concept for integrating with the [http://getahead.org/dwr DWR] framework. Follow the following links for more details:
+  * [JPublishDWR] - the documentation
+  * [http://jpublish.googlecode.com/svn/trunk/modules/dwr/ JPublishDWR] - the source
+  * [http://weblog.flop.ca/tags/dwr/ news]
+
+
 == Localization, I18n, etc. ==
   * [http://jpublish.googlecode.com/svn/trunk/modules/i18n/ JPublishI18n] - This is a Spring based JPublish - i18n solution.
 
-== Ajax, etc. ==
-  * [http://jpublish.googlecode.com/svn/trunk/modules/dwr/ JPublishDWR] - This is the JPublish-[http://getahead.org/dwr DWR] integration module
 
+== [http://code.google.com/p/jpublish/wiki/OrmSupport ORM] ==
+  * Cayenne support *available now*
+  * Hibernate support _in progress_
