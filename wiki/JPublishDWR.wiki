@@ -6,7 +6,25 @@
 
 We decided to use the [http://getahead.org/dwr DWR framework] for offering Direct Web Remoting to any JPublish web application. DWR allows Javascript in a browser to interact with Java on a server and helps you manipulate web pages with the results. With the JPublishDWR support not only that you can use DWR _a la carte_ ;) but you can also invoke any JPublish Actions, such as: BSH, JS, jRuby, Groovy, JPython and obviously compiled Java Actions.  
 
-
+Before starting, be sure that you have the latest JPublish and JPublishDWR builds from our SVN.  
 
 = Configuration =
-Everything is controlled via a JPublish Module configuration that can be included in the jpublish.xml configuration file.
+Everything is controlled via a JPublish Module configuration that can be included in the WEB-INF/jpublish.xml configuration file. Below is a simple JPublishDWR module configuration:
+{{{
+<module classname="ca.flop.jpublish.dwr.DWRModule">
+    <dwr-config-file>/WEB-INF/dwr.xml</dwr-config-file>
+    <dwr-path-prefix>/dwr</dwr-path-prefix>
+
+    <dwr-servlet-parameters>
+        <activeReverseAjaxEnabled>true</activeReverseAjaxEnabled>
+        <initApplicationScopeCreatorsAtStartup>true</initApplicationScopeCreatorsAtStartup>
+        <maxWaitAfterWrite>500</maxWaitAfterWrite>
+        <debug>true</debug>
+    </dwr-servlet-parameters>
+</module>
+}}}
+
+For those of you already familiar with DWR the above configuration will not look strange.
+
+JPublish will look for the dwr.xml configuration file in the path declared by the <dwr-config-file> node. Then all the web requests mapped on /dwr will be filtered by the JPublishDWR module. Basically JPublish acts like a fake Servlet Container for the DWR Servlet mapping the DWR Servlet on specific JPublish web requests. Very simple but efficient.
+ 
