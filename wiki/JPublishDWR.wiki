@@ -9,7 +9,10 @@ We decided to use the [http://getahead.org/dwr DWR framework] for offering Direc
 Before starting, be sure that you have the latest JPublish and JPublishDWR builds from our SVN.  
 
 = Configuration =
-Everything is controlled via a JPublish Module configuration that can be included in the WEB-INF/jpublish.xml configuration file. Below is a simple JPublishDWR module configuration:
+Everything is controlled via a JPublish Module configuration that can be included in the WEB-INF/jpublish.xml configuration file. 
+
+=== The jpublish.xml file ===
+Below is a simple JPublishDWR module configuration:
 {{{
 <module classname="ca.flop.jpublish.dwr.DWRModule">
     <dwr-config-file>/WEB-INF/dwr.xml</dwr-config-file>
@@ -29,4 +32,41 @@ For those of you already familiar with DWR the above configuration will not look
 JPublish will look for the dwr.xml configuration file in the path declared by the <dwr-config-file> node. Then all the web requests mapped on /dwr will be filtered by the JPublishDWR module. Basically JPublish acts like a fake Servlet Container for the DWR Servlet mapping the DWR Servlet on specific JPublish web requests. Very simple but efficient.
 
 The next block, the *dwr-servlet-parameters* will contain anything you want to transmit to the DWR "servlet". Think of the Servlet init-parameters. For more details about the parameters expected by the DWR Servlet please follow the original documentation: [http://getahead.org/dwr/server/servlet Configuring DWR]. JPublish is just passing these parameters to DWR.
- 
+
+_Any changes you're doing to the jpublish.xml will be visible to your application immediately without requiring a restart, useful when you want to play with DWR in debug mode. I highly recommend to set debug to *false* for production!_
+
+=== The dwr.xml file ===
+As you know from the DWR documentation, the dwr.xml file is used configure DWR.
+
+Here is a simple example taken from our demo web application:
+{{{
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+        "http://getahead.ltd.uk/dwr/dwr20.dtd">
+
+<dwr>
+    <init>
+        <creator id="jpublish" class="ca.flop.jpublish.dwr.JPublishCreator"/>
+    </init>
+
+    <allow>
+        <create creator="new" javascript="FilePing" scope="application">
+            <param name="class" value="ca.flop.jpublish.dwr.demo.FilePing"/>
+        </create>
+
+        <!--Test a JPublish Action-->
+        <create creator="jpublish" javascript="InfoAction" scope="application">
+            <param name="class" value="ca.flop.jpublish.dwr.DWRJPublishActionManager"/>
+            <param name="actionName" value="InfoAction.bsh"/>
+        </create>
+    </allow>
+
+    <signatures>
+        <![CDATA[
+          import java.util.Map;
+          import ca.flop.jpublish.dwr.DWRJPublishActionManager;
+          DWRJPublishActionManager.execute( Map<String, String>);
+          ]]>
+    </signatures>
+</dwr>
+
+}}}
