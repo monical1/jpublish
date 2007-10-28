@@ -27,4 +27,6 @@ Everything is controlled via a JPublish Module configuration that can be include
 For those of you already familiar with DWR the above configuration will not look strange.
 
 JPublish will look for the dwr.xml configuration file in the path declared by the <dwr-config-file> node. Then all the web requests mapped on /dwr will be filtered by the JPublishDWR module. Basically JPublish acts like a fake Servlet Container for the DWR Servlet mapping the DWR Servlet on specific JPublish web requests. Very simple but efficient.
+
+The next block, the *dwr-servlet-parameters* will contain anything you want to transmit to the DWR "servlet". Think of the Servlet init-parameters. For more details about the parameters expected by the DWR Servlet please follow the original documentation: [http://getahead.org/dwr/server/servlet Configuring DWR]. JPublish is just passing these parameters to DWR.
  
