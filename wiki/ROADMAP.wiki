@@ -6,16 +6,10 @@
 
 ===Version 4.00===
 *ORM support*
-  * Cayenne  (via JPCayenneModule)  --> AVAILABLE <--
+  * Cayenne (via JPCayenneModule)  -->AVAILABLE<--
 
 *DWR/Ajax support*
-  * ability to remotely execute JPublish Actions -> implementation *done*, to be committed <- 
-
-===Version 4.01===
-*JPublish*
-  * break the dependency with the VFS 
-  * reduce the dependencies with the PostEdenLib
-  * add Javolution
+  * ability to remotely execute JPublish Actions ->AVAILABLE<-. [http://code.google.com/p/jpublish/wiki/JPublishDWR Read more]. 
 
 *Pluggable Authentication Modules*
   * OpenID support
@@ -23,6 +17,13 @@
   * evaluative roles and resource based permission
   * UI admin for user roles, permissions and resource access management
   * pluggable permission evaluator
+
+
+===Version 4.01===
+*JPublish*
+  * break the dependency with the VFS 
+  * reduce the dependencies with the PostEdenLib
+  * add Javolution
 
 *Quartz scheduler*
   * running scheduled jobs; cron-like plugin
