@@ -14,7 +14,9 @@ Everything is controlled via a JPublish Module configuration that can be include
 === The jpublish.xml file ===
 Below is a simple JPublishDWR module configuration:
 {{{
-<module classname="ca.flop.jpublish.dwr.DWRModule">
+<jpublish>
+...
+  <module classname="ca.flop.jpublish.dwr.DWRModule">
     <dwr-config-file>/WEB-INF/dwr.xml</dwr-config-file>
     <dwr-path-prefix>/dwr</dwr-path-prefix>
 
@@ -24,7 +26,9 @@ Below is a simple JPublishDWR module configuration:
         <maxWaitAfterWrite>500</maxWaitAfterWrite>
         <debug>true</debug>
     </dwr-servlet-parameters>
-</module>
+  </module>
+...
+</jpublish>
 }}}
 
 For those of you already familiar with DWR the above configuration will not look strange.
