@@ -1,0 +1,12 @@
+#summary JPublish-DWR documentation.
+#labels Phase-Implementation,DWR,AJAX,Module
+
+= Introduction =
+[http://getahead.org/images/dwr-logo-200.gif]
+
+We decided to use the [http://getahead.org/dwr DWR framework] for offering Direct Web Remoting to any JPublish web application. DWR allows Javascript in a browser to interact with Java on a server and helps you manipulate web pages with the results. With the JPublishDWR support not only that you can use DWR _a la carte_ ;) but you can also invoke any JPublish Actions, such as: BSH, JS, jRuby, Groovy, JPython and obviously compiled Java Actions.  
+
+
+
+= Configuration =
+Everything is controlled via a JPublish Module configuration that can be included in the jpublish.xml configuration file.
