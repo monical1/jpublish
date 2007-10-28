@@ -6,10 +6,10 @@
 
 ===Version 4.00===
 *ORM support*
-  * Cayenne (via JPCayenneModule)  -->AVAILABLE<--
+  * Cayenne (via JPCayenneModule)[http://jpublish.googlecode.com/svn/trunk/images/accept.png]
 
-*DWR/Ajax support*
-  * ability to remotely execute JPublish Actions ->AVAILABLE<-. [http://code.google.com/p/jpublish/wiki/JPublishDWR Read more]. 
+*[http://code.google.com/p/jpublish/wiki/JPublishDWR DWR/Ajax support]*
+  * ability to remotely execute JPublish Actions [http://jpublish.googlecode.com/svn/trunk/images/accept.png] 
 
 *Pluggable Authentication Modules*
   * OpenID support
