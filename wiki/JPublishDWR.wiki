@@ -87,10 +87,15 @@ _work in progress_ todo: describe the internals of the JPublishCreator
        <creator id="jpublish" class="ca.flop.jpublish.dwr.JPublishCreator"/>
     </init>
    ...
-    <create creator="jpublish" javascript="InfoAction" scope="application">
-       <param name="class" value="ca.flop.jpublish.dwr.DWRJPublishActionManager"/>
-       <param name="actionName" value="InfoAction.bsh"/>
-    </create>
+    <allow>
+        <convert converter="bean" match="org.jpublish.util.*"/>
+        
+        <create creator="jpublish" javascript="InfoAction" scope="application">
+           <param name="class" value="ca.flop.jpublish.dwr.DWRJPublishActionManager"/>
+           <param name="actionName" value="InfoAction.bsh"/>
+        </create>
+    ...
+    </allow>
 }}}
 
   * then define the *[http://jpublish.googlecode.com/svn/trunk/samples/simpledwr/web/actions/InfoAction.bsh InfoAction.bsh]*. Here is the code from our SVN example:
@@ -119,6 +124,17 @@ _work in progress_ todo: describe the internals of the JPublishCreator
 
 (Note: `the code above is using Velocity syntax`)
 
-However, in the current implementation, the JPublishContext -required by the Actions- is a very limited one, used only to carry on the input parameters and the Action response. In a very near version, we will provide a better JPublishContext to the Actions that can be executed via DWR calls.
+However, in the current implementation, the JPublishContext -required by the Actions- is a  limited one, used to carry on the input parameters and the Action response. In a very near version, we will provide a better JPublishContext to the Actions that can be executed via DWR calls. Recently the following JPublish objects were added:
+{{{
+    JPublishContext.JPUBLISH_REQUEST
+    JPublishContext.JPUBLISH_RESPONSE
+    JPublishContext.JPUBLISH_SESSION
+    JPublishCreator.APPLICATION
+    JPublishContext.JPUBLISH_CHARACTER_ENCODING_MAP
+    JPublishContext.JPUBLISH_URL_UTILITIES
+    JPublishContext.JPUBLISH_DATE_UTILITIES
+    JPublishContext.JPUBLISH_NUMBER_UTILITIES
+    JPublishCreator.DWR_CURRENT_PAGE
+}}}
 
 _todo: More examples_ 
