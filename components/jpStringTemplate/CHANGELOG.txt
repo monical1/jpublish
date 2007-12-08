@@ -1,4 +1,0 @@
-JPublish StringTemplate Component
-
-[2007.09.01]
- - initial version

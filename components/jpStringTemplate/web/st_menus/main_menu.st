@@ -1,2 +1,0 @@
-Main menu:
-$menu; separator=", "$

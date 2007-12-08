@@ -1,4 +1,0 @@
-CHANGELOG
-
-[2007.05.24]
- - initial version
