@@ -8,6 +8,8 @@
  */
 package org.jpublish.newforms;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -36,11 +38,11 @@ public class Form {
     public Form init(HttpServletRequest request) {
         Enumeration en = request.getParameterNames();
         Map m = new HashMap();
-        while(en.hasMoreElements()){
+        while (en.hasMoreElements()) {
             String param = (String) en.nextElement();
             String[] vals = request.getParameterValues(param);
-            if(vals != null && vals.length == 1){
-                m.put(param,vals[0]);
+            if (vals != null && vals.length == 1) {
+                m.put(param, vals[0]);
             } else {
                 m.put(param, vals);
             }
@@ -48,12 +50,12 @@ public class Form {
         return init(m);
     }
 
-    public boolean isValid(){
+    public boolean isValid() {
         setValidationRequested(true);
         collectAndSetErrors();
         return hasValidData();
     }
-    
+
     protected boolean hasValidData() {
         boolean hasError = false;
         for (Iterator iter = getFormFields().iterator(); iter.hasNext() && hasError == false;) {
@@ -62,6 +64,24 @@ public class Form {
                 f.clean();
             } catch (ValidationError ex) {
                 hasError = true;
+            }
+        }
+        //if has error false run any custom validation that may be defined in the class
+        for (Iterator iter = getFormValidators().iterator(); iter.hasNext() && hasError == false;) {
+            Method m = (Method) iter.next();
+            try {
+                m.invoke(this, null);
+            } catch (IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            } catch (IllegalArgumentException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvocationTargetException ex) {
+                Throwable source = ex.getCause();
+                if (source instanceof ValidationError) {
+                    hasError = true;
+                } else {
+                    throw new RuntimeException(ex);
+                }
             }
         }
         return !hasError;
@@ -108,9 +128,9 @@ public class Form {
                 r.append(f.getLabel());
                 r.append(LE);
                 r.append(f.toString());
-                if(isValidationRequested() && f.isError()){
+                if (isValidationRequested() && f.isError()) {
                     r.append(EMSG);
-                    r.append("error_"+f.getId());
+                    r.append("error_" + f.getId());
                     r.append(EMSG2);
                     r.append(f.getErrorMessage());
                     r.append(EMSGE);
@@ -140,6 +160,24 @@ public class Form {
             } catch (ValidationError ex) {
                 e.add(ex.getMessage());
                 f.setError(true);
+            }
+        }
+        //now collect errors from custom validators
+        for (Iterator iter = getFormValidators().iterator(); iter.hasNext();) {
+            Method m = (Method) iter.next();
+            try {
+                m.invoke(this, null);
+            } catch (IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            } catch (IllegalArgumentException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvocationTargetException ex) {
+                Throwable source = ex.getCause();
+                if (source instanceof ValidationError) {
+                    e.add(source.getMessage());
+                } else {
+                    throw new RuntimeException(ex);
+                }
             }
         }
     }
@@ -174,5 +212,18 @@ public class Form {
 
     public List getErrors() {
         return errors;
+    }
+
+    private List getFormValidators() {
+        List l = new ArrayList();
+        Class c = this.getClass();
+        Method meths[] = c.getMethods();
+        for (int i = 0; i < meths.length; i++) {
+            Method m = meths[i];
+            if (m.getName().startsWith("validate")) {
+                l.add(m);
+            }
+        }
+        return l;
     }
 }
