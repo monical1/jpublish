@@ -2,10 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.jpublish.newforms;
 
-import org.jpublish.newforms.Form;
 import java.util.HashMap;
 import java.util.Map;
 import junit.framework.TestCase;
@@ -15,10 +13,10 @@ import junit.framework.TestCase;
  * @author jakub
  */
 public class FormTest extends TestCase {
-    
+
     public FormTest(String testName) {
         super(testName);
-    }            
+    }
 
     protected void setUp() throws Exception {
         super.setUp();
@@ -37,9 +35,9 @@ public class FormTest extends TestCase {
         boolean result = instance.isValid();
         assertEquals(expResult, result);
         Map m = new HashMap();
-        m.put("first","Jakub");
-        m.put("last","Labath");
-        m.put("token","48575636");
+        m.put("first", "Jakub");
+        m.put("last", "Labath");
+        m.put("token", "48575636");
         Form f1 = new TestForm().init(m);
         assertEquals(true, f1.isValid());
     }
@@ -79,17 +77,18 @@ public class FormTest extends TestCase {
         instance.setData(data);
         assertEquals(data, instance.getData());
     }
-    
-    public void testAsP(){
+
+    public void testAsP() {
         Map data = new HashMap();
         data.put("first", " Jakub ");
         data.put("last", "Labath");
         data.put("token", "55346546");
         Form f = new TestForm().init(data);
         String expResult = "<p><label for=\"id_first\">First name:</label><input type=\"text\" id=\"id_first\" name=\"first\" value=\" Jakub \"/></p><p><label for=\"id_last\">Last name:</label><input type=\"text\" id=\"id_last\" name=\"last\" value=\"Labath\"/></p><input type=\"hidden\" id=\"id_token\" name=\"token\" value=\"55346546\"/>";
-        assertEquals(f.asP(),expResult);
+        assertEquals(f.asP(), expResult);
     }
-    public void testAsPWithError(){
+
+    public void testAsPWithError() {
         Map data = new HashMap();
         data.put("first", "  ");
         data.put("last", "Labath");
@@ -97,10 +96,10 @@ public class FormTest extends TestCase {
         Form f = new TestForm().init(data);
         assertFalse(f.isValid());
         String expResult = "<p><label for=\"id_first\">First name:</label><input type=\"text\" id=\"id_first\" name=\"first\" value=\"  \"/><span id=\"error_id_first\">Field is required.</span></p><p><label for=\"id_last\">Last name:</label><input type=\"text\" id=\"id_last\" name=\"last\" value=\"Labath\"/></p><input type=\"hidden\" id=\"id_token\" name=\"token\" value=\"55346546\"/>";
-        assertEquals(f.asP(),expResult);
+        assertEquals(f.asP(), expResult);
     }
-    
-    public void testAsPWithMissingHidden(){
+
+    public void testAsPWithMissingHidden() {
         Map data = new HashMap();
         data.put("first", "Jakub");
         data.put("last", "Labath");
@@ -112,4 +111,24 @@ public class FormTest extends TestCase {
         assertTrue(((TestForm) f).token.isError());
     }
 
+    public void testCustomValidFunction() {
+        Map data = new HashMap();
+        data.put("first", "John");
+        data.put("last", "Doe");
+        Form f;
+        f = new TestForm1().init(data);
+        assertTrue(f.isValid());
+        data.put("first", "michael");
+        f = new TestForm1().init(data);
+        assertFalse(f.isValid());
+        assertEquals(
+                "First letter of the first name must be uppercase.",
+                (String) f.getErrors().get(0));
+        data.put("first", "Michael1");
+        f = new TestForm1().init(data);
+        assertFalse(f.isValid());
+        assertEquals(
+                "Names cannot contain digits.",
+                (String) f.getErrors().get(0));
+    }
 }
