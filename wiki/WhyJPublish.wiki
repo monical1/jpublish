@@ -66,7 +66,7 @@ Each web page is defined in an XML document located in the site-root/pages. It i
 *Templates*
 
 JPublish uses by default the Velocity template engine from the Apache group for its templating language. Velocity documentation can be found at http://jakarta.apache.org/velocity. Each page has a default template which is used to render the page. Changes made to the template will be reflected throughout your web site.
-Content. Alternatively you can replace Velocity with FreeMarker or WebMacro, we'll show you later how to do that.
+Content. Alternatively you can replace Velocity with StringTemplate, FreeMarker or WebMacro, we'll show you later how to do that.
 
 Accessing content in JPublish is done through *repositories*. Repositories are registered at startup time through the config.xml file. Since each repository is registered with a name accessing the repository from a template is as simple as $name.get(content) where name is the repository name and content is a path to the content you are loading.
 
@@ -136,6 +136,4 @@ JPublish exposes an object called *syslog* in the Page context and in the script
  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 }}}
-
-
 
