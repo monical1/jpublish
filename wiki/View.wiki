@@ -86,7 +86,7 @@ To build your own view renderer you must implement the {{{org.jpublish.view.View
 
 {{{
 Note: ViewRenderer implementations should strive to make use of caching mechanisms
-      provided by template engines so as to avoid extra unnecessary template parsing.
+      provided by their respective template engines. This will avoid unnecessary parsing.
 }}}
 
 
