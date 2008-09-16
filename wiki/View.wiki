@@ -46,13 +46,13 @@ The StringTemplate view renderer is using the StringTemplate engine. To activate
 </view-renderer>
 }}}
 
-and be sure to configure JPublish with the default index file as *index.st*. To do this simple add:
+and make sure to configure JPublish with the default index file as *index.st*. You only need to declare the default (welcome) page:
 {{{
 <default-page>index.st</default-page>
 }}} 
-to your jpublish.xml config file.
+in your jpublish.xml config file.
 
-Also, specify the mime type for the new resource type, also in jpublish.xml:
+Also, specify the mime type for the new resource type:
 {{{
 <mime-mapping ext="st" mimetype="text/html"/>
 }}}
