@@ -18,6 +18,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
     * [BldYourOwnViewer Building Your Own]
   * [Modules]
     * Reverse AJAX through DWR. The [http://code.google.com/p/jpublish/wiki/JPublishDWR JPublishDWR] Module
+    * Object-relational Mapping with [http://code.google.com/p/jpublish/wiki/OrmSupport Cayenne ORM].
   * [Components]
   * [Configuration]
   * [Context]
