@@ -1,0 +1,9 @@
+#JPublish RESTLET frameworkintegration.
+
+= RESTful services(actions) =
+
+... in progress
+
+
+= build from source =
+[http://code.google.com/p/jpublish/source/browse/trunk/modules/jprestlet/ JPRestlet source]
