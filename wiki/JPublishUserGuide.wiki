@@ -19,7 +19,7 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
   * [Modules]
     * Reverse AJAX through DWR. The [http://code.google.com/p/jpublish/wiki/JPublishDWR JPublishDWR] Module
     * Object-relational Mapping with [http://code.google.com/p/jpublish/wiki/OrmSupport Cayenne ORM].
-    * RESTful services (actions) via JPRestlet module [http://www.restlet.org/about/introduction RESTLET]
+    * RESTful services (actions) via [http://code.google.com/p/jpublish/source/browse/#svn/trunk/modules/jprestlet JPRestlet module] [http://www.restlet.org/about/introduction RESTLET]
   * [Components]
   * [Configuration]
   * [Context]
