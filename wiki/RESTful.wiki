@@ -31,9 +31,9 @@ To start, build from svn or download the demo above. If you check your jpublish.
     </module>
 }}}
 
-The configuration above will initialize the RESTLET support for all the requests on the path described by the <url/> tag: "rest/*" in this case.
+The configuration above will initialize the RESTLET support for all the requests on the path described by the {{{<url/>}}} tag: {{{"rest/*"}}} in this case.
 
-The RESTLET convertor will be initialized from the /WEB-INF/jprestlet-config.xml file. In the jprestlet-config.xml, you can define your resource mappings and a dedicated JPublish content repository: "extended", in this example. The JPublish repositories are defined in the jpublish.xml, but you should already know that.
+The RESTLET converter will be initialized from the */WEB-INF/jprestlet-config.xml* file. In the jprestlet-config.xml, you can define your resource mappings and a dedicated JPublish content repository: "extended", in this example. The JPublish repositories are defined in the jpublish.xml, but you should already know that.
 
 In our example, we are supporting the following routes:
 {{{
@@ -51,7 +51,7 @@ In our example, we are supporting the following routes:
 
 With the mappings declared above, a call like:
 {{{
-    * http://localhost:8080/jprestlet/rest/hello/JPublish
+    http://localhost:8080/jprestlet/rest/hello/JPublish
 }}}
 
 will echo back to you the text: Hello JPublish!
