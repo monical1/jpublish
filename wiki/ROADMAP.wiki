@@ -10,6 +10,9 @@
 
 *[http://code.google.com/p/jpublish/wiki/JPublishDWR DWR/Ajax support]*
   * ability to remotely execute JPublish Actions [http://jpublish.googlecode.com/svn/trunk/images/accept.png] 
+  
+*REST support*
+  * resource mapping and routing support similar to Rails [http://jpublish.googlecode.com/svn/trunk/images/accept.png] [http://weblog.flop.ca/2009/03/18/1237421760000.html blog]
 
 *Pluggable Authentication Modules*
   * OpenID support
@@ -18,7 +21,8 @@
   * UI admin for user roles, permissions and resource access management
   * pluggable permission evaluator
 
-*Hibernate support via JPHibernate*
+ 
+*--Hibernate support via JPHibernate--*; we're supporting Cayenne ORM out of the box. Hibernate support can be handled by the user. [http://weblog.flop.ca/2004/06/06/1086553824000.html Here's an example] 
 
 
 ===Version 4.01===
@@ -42,6 +46,3 @@
   * engine
   * sitelet
   * router
-  
-*REST support*
-  * resource mapping and routing support similar to Rails
