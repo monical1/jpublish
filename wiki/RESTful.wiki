@@ -1,7 +1,7 @@
 #labels RESTLET,JPRestlet,Module
 #JPublish RESTLET frameworkintegration.
 
-= RESTful services (actions) =
+= RESTful services (actions and/or pages) =
 
 I am pleased to let you know about the availability of a very simple yet flexible integration between JPublish and the [http://www.restlet.org RESTLET framework]  
 
