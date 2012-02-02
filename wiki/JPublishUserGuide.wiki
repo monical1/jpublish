@@ -20,7 +20,8 @@ Welcome to the world of JPublish. This is a world of truly dynamic web applicati
     * Reverse AJAX through DWR. The [http://code.google.com/p/jpublish/wiki/JPublishDWR JPublishDWR] Module
     * Object-relational Mapping with [http://code.google.com/p/jpublish/wiki/OrmSupport Cayenne ORM].
     * RESTful services (actions) via a [http://code.google.com/p/jpublish/wiki/RESTful JPRestlet module] supporting the [http://www.restlet.org/about/introduction RESTLET] framework.
-    * RESTful services supporting the Apache Wink [http://incubator.apache.org/wink/] library. A JPublish [http://code.google.com/p/jpublish/source/browse/ module]
+    * RESTful services supporting the [http://incubator.apache.org/wink/ Apache Wink ] library. A JPublish [http://code.google.com/p/jpublish/source/browse/ module]
+    * or the recommended REST implementation: [http://code.google.com/p/jpublish/source/browse RestPath] native Actions.
   * [Components]
   * [Configuration]
   * [Context]
